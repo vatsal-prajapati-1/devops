@@ -17,6 +17,6 @@ spec:
         app: node-app
     spec:
       containers:
-      - name: node-app
-        # Run this image
-        image: batmanlovewonderwomen/node-demo-app:01
+        - name: node-app
+          # Run this image
+          image: batmanlovewonderwomen/node-demo-app:01
