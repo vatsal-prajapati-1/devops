@@ -1,0 +1,31 @@
+iikind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: vite-deployment
+  labels:
+    app: vite
+  namespace: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vite
+  template:
+    metadata:
+      labels:
+        app: vite
+    spec:
+      containers:
+        - name: vite
+          image: batmanlovewonderwomen/myviteapp:02
+          ports:
+            - containerPort: 5173
+            
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5173
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5173
