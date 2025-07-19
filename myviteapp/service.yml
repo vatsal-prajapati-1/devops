@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: vite-service
+  namespace: nginx
+spec:
+  selector:
+    app: vite
+  ports:
+    - protocol: TCP
+      port: 5173
+      targetPort: 3000
+  type: ClusterIP
