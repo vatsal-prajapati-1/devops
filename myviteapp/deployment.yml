@@ -1,4 +1,4 @@
-iikind: Deployment
+kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: vite-deployment
@@ -20,7 +20,13 @@ spec:
           image: batmanlovewonderwomen/myviteapp:02
           ports:
             - containerPort: 5173
-            
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "200m"
+              memory: "256Mi"
           livenessProbe:
             httpGet:
               path: /
