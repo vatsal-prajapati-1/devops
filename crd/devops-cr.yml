@@ -1,0 +1,9 @@
+kind: DevOps
+apiVersion: redefine.devops.com/v1
+metadata:
+  name: ci-cd
+spec:
+  name: kind-devops
+  duration: learing kind cluster
+  platform: youtube
+  mode: tutorial
